@@ -1,3 +1,3 @@
 ul.nav-list(ng-controller="navController")
   li.list-item(ng-repeat="item in navList")
-    a.item-link(ui-sref="{{item.sref}}") {{item.name}}
+    a.item-link(ui-sref="{{item.sref}}" ui-sref-active="is-active") {{item.name}}

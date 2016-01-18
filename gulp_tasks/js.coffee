@@ -2,6 +2,7 @@
 gulp          = require('gulp')
 coffee        = require('gulp-coffee')
 concat        = require('gulp-concat')
+minify        = require('gulp-minify')
 livereload    = require('gulp-livereload')
 
 path = require './path.coffee'
@@ -14,6 +15,7 @@ gulp.task 'js', ->
     path.inputDir + '../bower_components/particles.js/analytic.js',
   ])
   .pipe concat('main.js')
+  .pipe(minify())
   .pipe gulp.dest(path.outputDir + 'js')
   .pipe livereload()
 
@@ -25,5 +27,17 @@ gulp.task 'coffee', ->
   ])
   .pipe coffee({bare: true})
   .pipe concat('common.js')
+  .pipe(minify())
+  .pipe gulp.dest(path.outputDir + 'js')
+  .pipe livereload()
+
+gulp.task 'js:concat', ->
+  gulp.src([
+    path.outputDir + 'js/main.js',
+    path.outputDir + 'js/common.js',
+    path.outputDir + 'js/templates.js'
+  ])
+  .pipe concat('app.js')
+  .pipe(minify())
   .pipe gulp.dest(path.outputDir + 'js')
   .pipe livereload()

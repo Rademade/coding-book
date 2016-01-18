@@ -1,0 +1,11 @@
+mixin snippet(nameSref,sref,srefTitle,title,description)
+  div.snippet-preview
+    p.preview-title()= title
+    p.preview-description()= description
+    a.preview-link(href="#{sref}" target="blank")= nameSref
+
+
+mixin snippet-controller(name)
+  div.snippet-list(ng-controller="#{name}")
+    div.snippet-holder(ng-repeat="item in snippetList")
+      +snippet('{{item.nameSref}}','{{item.sref}}','{{item.sref}}','{{item.title}}','{{item.description}}')

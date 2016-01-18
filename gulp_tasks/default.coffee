@@ -17,11 +17,13 @@ gulp.task 'default', gulpsync.sync([
     'jade:angular'
     'sass'
     'sprites'
-    'fonts'
+    'fonts:js'
+    'fonts:css'
     'img'
-    'js'
-    'coffee'
     'watch'
     'connect'
-  ]
+  ],
+  'js'
+  'coffee'
+  'js:concat'
 ])

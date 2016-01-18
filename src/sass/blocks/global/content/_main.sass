@@ -1,0 +1,60 @@
+.content
+  padding: 35px 0
+  +clear
+
+  .content-text
+
+    p
+      font-size: em(16)
+      line-height: 22px
+
+    h1
+      margin-bottom: 20px
+      font-size: em(30)
+      line-height: 34px
+      font-weight: bold
+
+    h2
+      margin-bottom: 20px
+      font-size: em(25)
+      line-height: 29px
+
+    b
+      font-weight: bold
+
+    ul
+      list-style: decimal inside
+      margin-bottom: 10px
+      padding-left: 20px
+      li
+        margin-bottom: 10px
+        font-size: em(16)
+        line-height: 22px
+
+    a
+      color: #2ec783
+      border-bottom: 1px solid rgba(99,199,131,0.7)
+      &:hover
+        border-bottom: 1px solid transparent
+
+  .content-nav
+    position: relative
+    z-index: 2
+    float: left
+    width: 250px
+    box-sizing: border-box
+    +media-below(768)
+      float: none
+      margin-bottom: 30px
+      width: 100%
+
+  .content-data
+    float: left
+    width: 100%
+    padding-left: 275px
+    margin-left: -250px
+    box-sizing: border-box
+    +media-below(768)
+      float: none
+      padding: 0
+      margin: 0

@@ -5,6 +5,7 @@ changed             = require('gulp-changed')
 jadeInheritance     = require('gulp-jade-inheritance')
 livereload          = require('gulp-livereload')
 notify              = require("gulp-notify")
+minify              = require('gulp-minify')
 templateCache       = require("gulp-angular-templatecache")
 path                = require './path.coffee'
 handleErrors        = require './util/handleErrors.coffee'
@@ -24,5 +25,6 @@ gulp.task 'jade:angular', ->
       .pipe(templateCache(
         module: "app"
       ))
+      .pipe(minify())
       .pipe(gulp.dest(path.outputDir + "js"))
       .pipe livereload()

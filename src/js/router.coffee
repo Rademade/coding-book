@@ -15,6 +15,11 @@ app.config([
         templateUrl: 'views/index.html'
         # controller: 'IndexController'
 
+      .state 'public.skeletons',
+        url: 'skeletons',
+        templateUrl: 'views/skeletons.html'
+        # controller: 'IndexController'
+
       .state 'public.galleries',
         url: 'galleries',
         templateUrl: 'views/galleries.html'
@@ -73,6 +78,11 @@ app.config([
       .state 'public.layouts',
         url: 'layouts',
         templateUrl: 'views/layouts.html'
+        # controller: 'IndexController'
+
+      .state 'public.simple',
+        url: 'simple',
+        templateUrl: 'views/simple.html'
         # controller: 'IndexController'
 
 

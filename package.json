@@ -25,6 +25,9 @@
   "devDependencies": {
     "coffee-script": "^1.9.3",
     "gulp-angular-templatecache": "^1.8.0",
+    "gulp-minify": "0.0.5",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.0.3"
   },
   "scripts": {
