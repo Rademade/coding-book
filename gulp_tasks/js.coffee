@@ -28,13 +28,3 @@ gulp.task 'coffee', ->
     .pipe concat('common.js')
     .pipe(minify())
     .pipe gulp.dest(path.outputDir + 'js')
-
-gulp.task 'js:concat',['js','coffee'], ->
-  gulp.src([
-    path.outputDir + 'js/main.js',
-    path.outputDir + 'js/common.js',
-    path.outputDir + 'js/templates.js'
-  ])
-    .pipe concat('app.js')
-    .pipe(minify())
-    .pipe gulp.dest(path.outputDir + 'js')

@@ -25,7 +25,6 @@ gulp.task 'default', gulpsync.sync([
     'js'
     'coffee'
   ]
-  'js:concat'
 ])
 
 gulp.task 'build:production', gulpsync.sync([
@@ -41,5 +40,4 @@ gulp.task 'build:production', gulpsync.sync([
   'img'
   'js'
   'coffee'
-  'js:concat'
 ])
