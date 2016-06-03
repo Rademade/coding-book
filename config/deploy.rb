@@ -32,7 +32,7 @@ namespace :deploy do
   task 'gulp:install' do
     on roles(:web) do
       within release_path do
-        execute "cd #{release_path} && BUILD_CONFIG='#{BUILD_CONFIG.to_json}' #{fetch :rvm_path}/bin/rvm #{fetch :rvm_ruby_version} do node_modules/.bin/gulp"
+        execute "cd #{release_path} && BUILD_CONFIG='#{BUILD_CONFIG.to_json}' #{fetch :rvm_path}/bin/rvm #{fetch :rvm_ruby_version} do node_modules/.bin/gulp build:production"
       end
     end
   end

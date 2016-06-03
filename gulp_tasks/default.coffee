@@ -27,3 +27,21 @@ gulp.task 'default', gulpsync.sync([
   'coffee'
   'js:concat'
 ])
+
+gulp.task 'build:production', gulpsync.sync([
+  # sync
+  'clean',
+  [
+    # async
+    'jade'
+    'jade:angular'
+    'sass'
+    'sprites'
+    'fonts:js'
+    'fonts:css'
+    'img'
+  ],
+  'js'
+  'coffee'
+  'js:concat'
+])
