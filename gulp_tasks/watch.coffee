@@ -13,5 +13,4 @@ gulp.task 'watch', ->
   gulp.watch path.inputDir + 'sass/**/*.sass', ['sass']
   gulp.watch path.inputDir + 'js/**/*.*', [ 'js' ]
   gulp.watch path.inputDir + 'js/**/*.*', [ 'coffee' ]
-  gulp.watch path.outputDir + 'js/*.js', ['js:concat']
   livereload.listen()

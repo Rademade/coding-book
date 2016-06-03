@@ -14,10 +14,9 @@ gulp.task 'js', ->
     path.inputDir + '../bower_components/particles.js/particles.js',
     path.inputDir + '../bower_components/particles.js/analytic.js',
   ])
-  .pipe concat('main.js')
-  .pipe(minify())
-  .pipe gulp.dest(path.outputDir + 'js')
-  .pipe livereload()
+    .pipe concat('main.js')
+    .pipe(minify())
+    .pipe gulp.dest(path.outputDir + 'js')
 
 gulp.task 'coffee', ->
   gulp.src([
@@ -25,19 +24,17 @@ gulp.task 'coffee', ->
     path.inputDir + 'js/router.coffee'
     path.inputDir + 'js/controllers/**/*.coffee'
   ])
-  .pipe coffee({bare: true})
-  .pipe concat('common.js')
-  .pipe(minify())
-  .pipe gulp.dest(path.outputDir + 'js')
-  .pipe livereload()
+    .pipe coffee({bare: true})
+    .pipe concat('common.js')
+    .pipe(minify())
+    .pipe gulp.dest(path.outputDir + 'js')
 
-gulp.task 'js:concat', ->
+gulp.task 'js:concat',['js','coffee'], ->
   gulp.src([
     path.outputDir + 'js/main.js',
     path.outputDir + 'js/common.js',
     path.outputDir + 'js/templates.js'
   ])
-  .pipe concat('app.js')
-  .pipe(minify())
-  .pipe gulp.dest(path.outputDir + 'js')
-  .pipe livereload()
+    .pipe concat('app.js')
+    .pipe(minify())
+    .pipe gulp.dest(path.outputDir + 'js')

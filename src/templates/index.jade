@@ -3,10 +3,16 @@ html(ng-app="app")
     meta(charset="utf-8")
     meta(name="fragment" content="!")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    link(rel="stylesheet" href="css/manifest.css")
+
+    style
+      include critical-css/critical.css
+
+    script
+      include critical-js/loadcss.js
 
   body
     div.wrapper
       div.wrapper-data(ui-view="")
 
-    script(src="./js/app-min.js" defer)
+    script(src="js/app-min.js" defer)
+    script(src="js/fonts.js" defer)

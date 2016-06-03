@@ -30,3 +30,17 @@ buildSass = (taskName,outputDir,minify) ->
 
 buildSass('sass', path.outputDir, true)
 buildSass('sass:production', path.outputDir, false)
+
+
+gulp.task 'sass:critical', ->
+  gulp.src(path.inputDir + 'sass/critical-sass/*.sass')
+  .pipe sass(
+    indentedSyntax: true
+    errLogToConsole: true
+    cache: false
+  )
+  .pipe autoprefixer(
+    browsers: ['> 0%']
+  )
+  .pipe(cssmin())
+  .pipe gulp.dest(path.inputDir + 'templates/critical-css/')
