@@ -2,8 +2,8 @@ BUILD_CONFIG = {
     domain: 'code.rademade.com'
 }
 
-set :deploy_to, '/var/www/code/frontend'
+set :deploy_to, '/home/code/website-frontend'
 
 set :branch, :master
 
-server 'code.rademade.com', user: 'deploy', roles: %w{web app}
+server 'code.rademade.com', user: 'code', roles: %w{web app}

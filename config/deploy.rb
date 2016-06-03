@@ -1,4 +1,4 @@
-lock '3.4.0'
+lock '3.5.0'
 
 set :application, 'Code-frontend'
 
@@ -32,7 +32,7 @@ namespace :deploy do
   task 'gulp:install' do
     on roles(:web) do
       within release_path do
-        execute "cd #{release_path} && BUILD_CONFIG='#{BUILD_CONFIG.to_json}' #{fetch :rvm_path}/bin/rvm #{fetch :rvm_ruby_version} do node_modules/.bin/gulp build:production"
+        execute "cd #{release_path} && BUILD_CONFIG='#{BUILD_CONFIG.to_json}' #{fetch :rvm_path}/bin/rvm #{fetch :rvm_ruby_version} do node_modules/.bin/gulp"
       end
     end
   end
