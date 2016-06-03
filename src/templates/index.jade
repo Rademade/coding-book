@@ -1,14 +1,10 @@
 html(ng-app="app")
   head
     meta(charset="utf-8")
-    meta(name="fragment" content="!")
     meta(name="viewport" content="width=device-width, initial-scale=1")
 
     style
       include critical-css/critical.css
-
-    script
-      include critical-js/loadcss.js
 
   body
     header.header(ng-include="'blocks/global/header.html'")
@@ -18,3 +14,5 @@ html(ng-app="app")
     script(src="js/common-min.js" defer)
     script(src="js/templates-min.js" defer)
     script(src="js/fonts.js" defer)
+    script
+      include critical-js/loadcss.js
