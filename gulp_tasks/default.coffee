@@ -10,19 +10,16 @@ gulp.task 'clean', (cb) ->
 
 gulp.task 'default', gulpsync.sync([
   # sync
-  'clean',
-  [
-    # async
-    'jade'
-    'jade:angular'
-    'sass'
-    'sprites'
-    'fonts:js'
-    'fonts:css'
-    'img'
-    'watch'
-    'connect'
-  ],
+  'clean'
+  'jade'
+  'jade:angular'
+  'sass'
+  'sprites'
+  'fonts:js'
+  'fonts:css'
+  'img'
+  'watch'
+  'connect'
   'js'
   'coffee'
   'js:concat'
@@ -30,17 +27,14 @@ gulp.task 'default', gulpsync.sync([
 
 gulp.task 'build:production', gulpsync.sync([
   # sync
-  'clean',
-  [
-    # async
-    'jade'
-    'jade:angular'
-    'sass'
-    'sprites'
-    'fonts:js'
-    'fonts:css'
-    'img'
-  ],
+  'clean'
+  'jade'
+  'jade:angular'
+  'sass:production'
+  'sprites'
+  'fonts:js'
+  'fonts:css'
+  'img'
   'js'
   'coffee'
   'js:concat'
