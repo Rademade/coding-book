@@ -18,7 +18,7 @@ dependencies:
     - npm install
     - bower install
     # Frontend test dependencies
-    - node node_modules/gulp/bin/gulp.js build
+    - node node_modules/gulp/bin/gulp.js build:production
     # - nohup bash -c "node server.js &"
     # Backend test dependencies
     # - cd ~/start-life-backend && bundle install
