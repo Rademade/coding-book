@@ -4,8 +4,28 @@ mixin snippet(nameSref,sref,srefTitle,title,description)
     p.preview-description()= description
     a.preview-link(href="#{sref}" target="blank")= nameSref
 
-
 mixin snippet-controller(name)
   div.snippet-list(ng-controller="#{name}")
     div.snippet-holder(ng-repeat="item in snippetList")
       +snippet('{{item.nameSref}}','{{item.sref}}','{{item.sref}}','{{item.title}}','{{item.description}}')
+
+
+
+mixin snippet-w-dd(date,person,title,description,ddTitle,ddText)
+  div.snippet-preview(ng-init="clicked = false" ng-class="{ 'is-active' : clicked }")
+    i.preview-dd-btn(ng-click="clicked = !clicked")
+
+    p.preview-data
+      span.preview-date()= date
+      span.preview-person()= person
+    p.preview-title()= title
+    p.preview-description()= description
+
+    div.preview-dd-list
+      p.preview-dd-title()= ddTitle
+      p.preview-dd-text(ng-repeat="text in item.ddText")= ddText
+
+mixin snippet-controller-w-dd(name)
+  div.snippet-list.mod-dd(ng-controller="#{name}")
+    div.snippet-holder(ng-repeat="item in snippetDdList")
+      +snippet-w-dd('{{item.date}}','{{item.person}}','{{item.title}}','{{item.description}}','{{item.ddTitle}}', '{{item.ddText.text}}')

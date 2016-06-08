@@ -38,5 +38,8 @@ app.controller 'navController', [ '$scope', ($scope) ->
     ,
       'sref': 'public.layouts'
       'name': 'Layouts'
+    ,
+      'sref': 'public.hackathon'
+      'name': 'Hackathon list'
   ]
 ]

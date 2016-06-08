@@ -80,6 +80,10 @@ app.config([
         templateUrl: 'views/layouts.html'
         # controller: 'IndexController'
 
+      .state 'public.hackathon',
+        url: 'hackathon',
+        templateUrl: 'views/hackathon.html'
+
       .state 'public.simple',
         url: 'simple',
         templateUrl: 'views/simple.html'
