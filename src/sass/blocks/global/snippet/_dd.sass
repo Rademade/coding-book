@@ -3,12 +3,7 @@
   &.is-active
 
     .preview-dd-btn
-      border: 1px solid #2ec783
-
-      &:after
-        color: #2ec783
-        transform: translate(-50%, -50%) rotate(0deg)
-
+      transform: rotate(-180deg)
 
     .preview-dd-list
       position: relative
@@ -18,32 +13,29 @@
   .preview-dd-btn
     cursor: pointer
     position: absolute
+    width: 25px
+    height: 20px
     top: 0
     right: 0
-    width: 30px
-    height: 30px
-    border-radius: 50%
-    border: 1px solid #c2c2c2
-    transition: border .3s ease
+    transition: transform .3s ease
+
+    &:after,
+    &:before
+      content: ''
+      position: absolute
+      top: 10px
+      width: 15px
+      height: 1px
+      background: #2ec783
+      transform-origin: 50% 50%
 
     &:after
-      content: '^'
-      position: absolute
-      top: 50%
-      left: 50%
-      color: #C2C2C2
-      font-size: 30px
-      height: 0
-      line-height: 6px
-      transform: translate(-50%, -50%) rotate(180deg)
-      transition: color .3s ease, transform .3s ease
-      +lato-light
+      left: 0
+      transform: rotate(45deg)
 
-    &:hover
-      border: 1px solid #2ec783
-
-      &:after
-        color: #2ec783
+    &:before
+      right: 0
+      transform: rotate(-45deg)
 
 
   .preview-dd-list
@@ -51,5 +43,24 @@
     padding-top: 10px
     margin-top: 10px
     text-align: left
-    border-top: 1px solid #eaeaea
 
+  .preview-dd-title
+    display: block
+    padding-bottom: 5px
+    margin: 15px 0
+    opacity: .7
+    color: #222a34
+    font-size: 20px
+    line-height: 1.42
+    border-bottom: 1px solid #d3d4d6
+    +lato-bold
+
+  .preview-dd-text
+    display: block
+    padding-left: 20px
+    margin-bottom: 10px
+    opacity: .8
+    color: #222a34
+    font-size: 16px
+    line-height: 1.42
+    box-sizing: border-box

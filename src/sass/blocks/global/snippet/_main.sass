@@ -3,12 +3,37 @@
   &.mod-dd
     margin-bottom: 30px
 
+    .snippet-holder
+      padding: 15px 30px
+
     .snippet-preview
       padding-right: 60px
 
+      .preview-data
+        margin-bottom: 15px
+
+        .preview-date,
+        .preview-person
+          color: #222a34
+          font-size: 14px
+
 
   .snippet-holder
+    position: relative
     margin-bottom: 20px
     padding: 15px 20px
     border: 1px solid #eaeaea
     border-radius: 4px
+
+    &.mod-future
+
+      &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 14px
+        height: 100%
+        background-color: #2ec783
+        border-radius: 4px 0 0 4px
+        

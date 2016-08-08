@@ -10,22 +10,22 @@ mixin snippet-controller(name)
       +snippet('{{item.nameSref}}','{{item.sref}}','{{item.sref}}','{{item.title}}','{{item.description}}')
 
 
+mixin snippet-w-dd(snippetItems)
+  div.snippet-list.mod-dd
+    each item in snippetItems
+      div.snippet-holder(ng-controller="HackathonController as hackathonCtrl" class="#{item[0].classMod} || '' ")
+        div.snippet-preview(ng-init="hackathonCtrl.clicked = false" ng-class="{ 'is-active' : hackathonCtrl.clicked }")
+          i.preview-dd-btn(ng-click="hackathonCtrl.clicked = !hackathonCtrl.clicked")
 
-mixin snippet-w-dd(date,person,title,description,ddTitle,ddText)
-  div.snippet-preview(ng-init="clicked = false" ng-class="{ 'is-active' : clicked }")
-    i.preview-dd-btn(ng-click="clicked = !clicked")
+          p.preview-data
+            span.preview-date()= item[0].date
+            span.preview-person()= item[0].person
+          p.preview-title()= item[0].title
+          p.preview-description()= item[0].description
 
-    p.preview-data
-      span.preview-date()= date
-      span.preview-person()= person
-    p.preview-title()= title
-    p.preview-description()= description
-
-    div.preview-dd-list
-      p.preview-dd-title()= ddTitle
-      p.preview-dd-text(ng-repeat="text in item.ddText")= ddText
-
-mixin snippet-controller-w-dd(name)
-  div.snippet-list.mod-dd(ng-controller="#{name}")
-    div.snippet-holder(ng-repeat="item in snippetDdList")
-      +snippet-w-dd('{{item.date}}','{{item.person}}','{{item.title}}','{{item.description}}','{{item.ddTitle}}', '{{item.ddText.text}}')
+          if item[0].ddList
+            each ddItem in item[0].ddList
+              div.preview-dd-list
+                p.preview-dd-title()!= ddItem[0].ddTitle
+                each ddTextItem in ddItem[0].ddTextList
+                  span.preview-dd-text()!= ddTextItem[0].ddText
