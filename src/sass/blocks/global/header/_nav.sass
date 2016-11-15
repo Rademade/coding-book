@@ -1,0 +1,46 @@
+.header-nav
+  float: right
+  
+  .nav-list
+    
+    .list-item
+      float: left
+      padding: 0px 15px
+
+      .item-link
+        position: relative
+        display: inline-block
+        font-size: em(18)
+        line-height: 70px
+        font-weight: 600
+        color: #4d4d4d
+        transition: color .3s ease
+        +proximanova-reg
+
+        &::after
+          position: absolute
+          content: ''
+          left: 0
+          bottom: 0
+          width: 100%
+          height: 3px
+          opacity: 0
+          background-color: #2ec783
+          transition: opacity .3s ease
+
+        &:hover
+          color: #2ec783
+
+          &::after
+            opacity: 1
+
+
+        &.is-active
+          color: #2ec783
+          cursor: default
+
+          &:hover
+            &::after
+              opacity: 0
+
+

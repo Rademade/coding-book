@@ -1,0 +1,19 @@
+include ../../mixins/page-topline
+
++page-topline('Welcome to Rademade code snippets!', [
+  [{
+    path: 'public.index.about',
+    name: 'About'
+  }],
+  [{
+    path: 'public.index.code',
+    name: 'Code check list'
+  }],
+  [{
+    path: 'public.index.simple',
+    name: 'Simple text example'
+  }]
+])
+
+div.fix
+  main.content-data(ui-view="")

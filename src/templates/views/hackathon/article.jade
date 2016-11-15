@@ -1,0 +1,15 @@
+include ../../mixins/page-topline
+
++page-topline('Hackathons', [
+  [{
+    path: 'public.hackathon.upcoming',
+    name: 'Upcoming Hackathons'
+  }],
+  [{
+    path: 'public.hackathon.passed',
+    name: 'Passed Hackathons'
+  }]
+])
+
+div.fix
+  main.content-data(ui-view="")
