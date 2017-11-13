@@ -1,0 +1,166 @@
+include ../mixins/page-topline
+
++page-topline('Fixed of main problems')
+
+div.fix
+  main.content-data
+
+    div.table
+      div.table-row.mod-header
+        div.table-cell
+          span #
+        div.table-cell
+          span Название
+        div.table-cell
+          span Решение
+
+      div.table-row
+        div.table-cell
+          span 1
+        div.table-cell
+          span Фикс для svg-ico в IE 9/10/11
+        div.table-cell
+          span
+            pre svg:not(:root) {
+              | &nbsp; overflow: hidden;
+              | }
+
+      div.table-row
+        div.table-cell
+          span 2
+        div.table-cell
+          span Фикс z-index в IE 10
+        div.table-cell
+          span
+            pre link {
+              | &nbsp; position: absolute;
+              | &nbsp; top: 0;
+              | &nbsp; left: 0;
+              | &nbsp; width: 100%;
+              | &nbsp; height: 100%;
+              | &nbsp; z-index: 2;
+              | &nbsp; background: white;
+              | &nbsp; opacity: 0;
+              |}
+
+      div.table-row
+        div.table-cell
+          span 3
+        div.table-cell
+          span Будьте осторожны! В IE некорректно рабоет функция calc() при вычислении значения в процентах
+        div.table-cell
+          span Правильно
+            pre .item {
+                | &nbsp; width: 33.3333%;
+                |}
+          span Неправильно
+            pre .item {
+              | &nbsp; width: calc(100% / 3);
+              |}
+          a(href="https://caniuse.com/#search=calc") https://caniuse.com/#search=calc
+
+      div.table-row
+        div.table-cell
+          span 4
+        div.table-cell
+          span Фикс ширины flexbox блока в IE 10
+        div.table-cell
+          span IE 10 дефолтное значение для flex - 0 0 auto
+
+      div.table-row
+        div.table-cell
+          span 5
+        div.table-cell
+          span Если контент для попапа погружаеться динамически, нужно заново пройтись по скрипту загрузки попапа чтобы инициализировать кнопку закрытия попапа
+        div.table-cell
+          span
+            pre $(function () {
+              | &nbsp; $body = $('body');
+              | &nbsp; $body.on('click', '.js-popup-close-btn', function () {
+              | &nbsp; &nbsp; hideContainer();
+              | &nbsp; });
+              | )};
+
+      div.table-row
+        div.table-cell
+          span 6
+        div.table-cell
+          span Если изначально на странице google карта была скрыта, нужно ее заново инициализировать
+        div.table-cell
+          span
+            pre $(function () {
+              | &nbsp;$('.js-map').on('click', function () {
+              | &nbsp; &nbsp; google.maps.event.trigger(map, 'resize');
+              | &nbsp; &nbsp; initMap();
+              | &nbsp; });
+              | )};
+          a(href="http://blog.codebusters.pl/en/google-maps-in-hidden-div/") http://blog.codebusters.pl/en/google-maps-in-hidden-div/
+
+      div.table-row
+        div.table-cell
+          span 7
+        div.table-cell
+          span Если на странице есть два одинаковых выпадающих меню и по клику на другое меню первое не закрывается
+        div.table-cell
+          span
+            pre $(function () {
+              | &nbsp; $(document).mouseup(function (e) {
+              | &nbsp; &nbsp; var $container = $('.js-toggle-box');
+              | &nbsp; &nbsp; if (!$container.is(e.target) && $container.has(e.target).length === 0) {
+              | &nbsp; &nbsp; &nbsp; $container.removeClass('is-active');
+              | &nbsp; &nbsp; }
+              | &nbsp; });
+              | )};
+
+      div.table-row
+        div.table-cell
+          span 8
+        div.table-cell
+          span Если изначально slick галерея была спрятана, например в jquery tabs, ее очень легко заново инициализировать
+        div.table-cell
+          span
+            pre .tab {
+              | &nbsp; display: none;
+              | &nbsp;
+              | &nbsp; &.ui-state-active {
+              | &nbsp; &nbsp; display: block ;
+              | &nbsp; }
+              | &nbsp; &.ui-widget-content {
+              | &nbsp; &nbsp; display: block'
+              | &nbsp; }
+              | &nbsp; &.ui-widget-content[aria-hidden="true"] {
+              | &nbsp; &nbsp; display: block !important
+              | &nbsp; &nbsp; height: 0
+              | &nbsp; &nbsp; overflow: hidden
+              | &nbsp; }
+              |}
+
+      div.table-row
+        div.table-cell
+          span 9
+        div.table-cell
+          span Тестирование писем
+        div.table-cell
+          span Ресурс для тестирования писем
+          a(href="https://www.emailonacid.com/") https://www.emailonacid.com/
+
+      div.table-row
+        div.table-cell
+          span 10
+        div.table-cell
+          span Css в верстке писем
+        div.table-cell
+          span Таблица использования css свойств в разных почтовых клиентах
+          a(href="https://www.campaignmonitor.com/css/") https://www.campaignmonitor.com/css/
+
+      div.table-row
+        div.table-cell
+          span 11
+        div.table-cell
+          span Фикс подсветки номеров в AppleMail
+        div.table-cell
+          span
+            pre .apple-color-number a {
+              | &nbsp; color: #293244 !important;
+              | &nbsp; text-decoration: none;
+              | }

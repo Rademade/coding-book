@@ -1,0 +1,54 @@
+.table
+  display: block
+  width: 100%
+  margin-bottom: 80px
+  border: 1px solid #999999
+  border-radius: 4px
+  overflow: hidden
+
+.table-row
+  display: flex
+  width: 100%
+  border-bottom: 1px solid #999999
+
+  &:last-child
+    border-bottom: none
+
+  &.mod-header
+    background: #e7e7e7
+    
+    
+.table-cell
+  display: block
+  width: 40%
+  padding: 10px
+  border-right: 1px solid #999999
+  box-sizing: border-box
+
+  &:first-child
+    width: 40px
+    text-align: center
+
+  &:last-child
+    border-right: none
+
+  span
+    display: block
+    margin-bottom: 10px
+
+    &:last-child
+      margin-bottom: 0
+  
+  a
+    display: inline
+    color: #2ec783
+    border-bottom: 1px solid #2ec783
+    text-decoration: none
+
+    &:hover
+      border-bottom-color: transparent
+
+  pre
+    display: block
+    font-size: 14px
+    font-style: italic

@@ -3,10 +3,10 @@ app.controller 'navController', [ '$scope', ($scope) ->
       'sref': 'public.skeletons'
       'name': 'Skeletons'
     ,
-      'sref': 'public.examples.checkboxes'
+      'sref': 'public.examples.form'
       'name': 'Examples'
     ,
-      'sref': 'public.hackathon.upcoming'
-      'name': 'Hackathon list'
+      'sref': 'public.problems'
+      'name': 'Fixed problems'
   ]
 ]

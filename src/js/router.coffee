@@ -33,12 +33,6 @@ app.config([
         # controller: 'IndexController'
 
 # Hackathons views #
-      .state 'public.hackathon',
-        abstract: true,
-        url: '/hackathon',
-        templateUrl: 'views/hackathon/main.html'
-        # controller: 'IndexController'
-
       .state 'public.hackathon.upcoming',
         url: '/upcoming',
         templateUrl: 'views/hackathon/upcoming.html'
@@ -70,6 +64,12 @@ app.config([
         templateUrl: 'views/articles/empty.html'
         # controller: 'IndexController'
 
+# Fixed problems views #
+      .state 'public.problems',
+        url: '/fixed-problems',
+        templateUrl: 'views/fixed-problems.html'
+        # controller: 'IndexController'
+
 # Skeletons views #
       .state 'public.skeletons',
         url: '/skeletons',
@@ -83,19 +83,20 @@ app.config([
         templateUrl: 'views/examples/main.html'
         # controller: 'IndexController'
 
-      .state 'public.examples.checkboxes',
-        url: '/checkboxes',
-        templateUrl: 'views/examples/checkboxes.html'
+      .state 'public.examples.form',
+        url: '/form-elements',
+        templateUrl: 'views/examples/form.html'
         # controller: 'IndexController'
 
-      .state 'public.examples.inputs',
-        url: '/inputs',
-        templateUrl: 'views/examples/inputs.html'
-        # controller: 'IndexController'
 
       .state 'public.examples.selects',
         url: '/selects',
         templateUrl: 'views/examples/selects.html'
+        # controller: 'IndexController'
+
+      .state 'public.examples.scripts',
+        url: '/scripts',
+        templateUrl: 'views/examples/scripts.html'
         # controller: 'IndexController'
 
       .state 'public.examples.buttons',
