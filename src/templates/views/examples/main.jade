@@ -1,0 +1,35 @@
+include ../../mixins/page-topline
+
++page-topline('Examples', [
+  [{
+    path: 'public.examples.form',
+    name: 'Form elements'
+  }],
+  [{
+    path: 'public.examples.selects',
+    name: 'Selects'
+  }],
+  [{
+    path: 'public.examples.scripts',
+    name: 'Scripts'
+  }],
+  [{
+    path: 'public.examples.buttons',
+    name: 'Buttons'
+  }],
+  [{
+    path: 'public.examples.navigations',
+    name: 'Navigations'
+  }],
+  [{
+    path: 'public.examples.images',
+    name: 'Images'
+  }],
+  [{
+    path: 'public.examples.layouts',
+    name: 'Layouts'
+  }]
+])
+
+div.fix
+  main.content-data(ui-view="")

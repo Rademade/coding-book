@@ -1,5 +1,4 @@
 .content
-  padding: 35px 0
   +clear
 
   .content-text
@@ -10,9 +9,10 @@
 
     h1
       margin-bottom: 20px
-      font-size: em(30)
-      line-height: 34px
+      font-size: em(42)
+      line-height: 54px
       font-weight: bold
+      color: #292929
 
     h2
       margin-bottom: 20px
@@ -37,24 +37,5 @@
       &:hover
         border-bottom: 1px solid transparent
 
-  .content-nav
-    position: relative
-    z-index: 2
-    float: left
-    width: 250px
-    box-sizing: border-box
-    +media-below(768)
-      float: none
-      margin-top: 30px
-      width: 100%
-
-  .content-data
-    float: right
-    width: calc(100% - 250px)
-    padding-left: 25px
-    box-sizing: border-box
-    +media-below(768)
-      float: none
-      width: 100%
-      padding: 0
-      margin: 0
+.content-data
+  padding: 60px 0 0 0

@@ -15,17 +15,9 @@ mixin snippet-w-dd(snippetItems)
     each item in snippetItems
       div.snippet-holder(ng-controller="HackathonController as hackathonCtrl" class="#{item[0].classMod} || '' ")
         div.snippet-preview(ng-init="hackathonCtrl.clicked = false" ng-class="{ 'is-active' : hackathonCtrl.clicked }")
-          i.preview-dd-btn(ng-click="hackathonCtrl.clicked = !hackathonCtrl.clicked")
 
           p.preview-data
             span.preview-date()= item[0].date
             span.preview-person()= item[0].person
-          p.preview-title()= item[0].title
+          a.preview-title.mod-title-green(ui-sref="#{item[0].path}")= item[0].title
           p.preview-description()= item[0].description
-
-          if item[0].ddList
-            each ddItem in item[0].ddList
-              div.preview-dd-list
-                p.preview-dd-title()!= ddItem[0].ddTitle
-                each ddTextItem in ddItem[0].ddTextList
-                  span.preview-dd-text()!= ddTextItem[0].ddText

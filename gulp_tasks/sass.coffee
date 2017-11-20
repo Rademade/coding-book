@@ -24,7 +24,7 @@ buildSass = (taskName,outputDir,minify) ->
     )
     pipe = pipe.pipe(cssmin()) unless minify
     pipe
-    .pipe gulp.dest(outputDir + 'css')
+    .pipe gulp.dest(outputDir + '/css')
     .pipe livereload()
     pipe
 

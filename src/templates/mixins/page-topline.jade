@@ -1,0 +1,8 @@
+mixin page-topline(title, items)
+    div.page-topline
+        div.fix
+            p.topline-title()= title
+            if items
+                div.topline-tabs
+                    each item in items
+                        a.tabs-item(ui-sref="#{item[0].path}" ui-sref-active="is-current")= item[0].name
