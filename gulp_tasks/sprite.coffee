@@ -1,7 +1,6 @@
 #plugins requires
 gulp            = require('gulp')
 svgSprite       = require('gulp-svg-sprite')
-svg2png         = require('gulp-svg2png')
 
 #path requires
 path = require './path.coffee'
@@ -30,5 +29,4 @@ gulp.task 'sprites', ->
   
 gulp.task 'sprites:png', ->
   gulp.src(path.outputDir + '/images/sprite.svg')
-  .pipe(svg2png())
   .pipe(gulp.dest(path.outputDir + 'images/'))
