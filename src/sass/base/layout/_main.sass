@@ -25,3 +25,38 @@ sup
   font-size: 50%
   line-height: 50%
   vertical-align: top
+
+
+b
+  +proximanova-bold
+
+.simple-text
+
+  .simple-text-list
+    margin: 0
+    padding: 0
+
+  .simple-text-item
+    display: block
+    margin-bottom: 10px
+    list-style-type: none
+    font-size: em(16)
+    line-height: 1.2
+    +clear
+
+    b
+      float: left
+      display: block
+      width: 185px
+      vertical-align: middle
+
+  .link
+    float: left
+    max-width: 200px
+    color: #2ec783
+    font-size: em(16)
+    line-height: 1.2
+    vertical-align: middle
+    border-bottom: 1px solid #2ec783
+    &:hover
+      border-bottom: 1px solid transparent
