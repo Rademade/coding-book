@@ -9,6 +9,7 @@ minify              = require('gulp-minify')
 templateCache       = require("gulp-angular-templatecache")
 path                = require './path.coffee'
 handleErrors        = require './util/handleErrors.coffee'
+nodePath            = require 'path'
 
 
 gulp.task 'jade', ->
@@ -24,6 +25,7 @@ gulp.task 'jade:angular', ->
       .pipe(jade())
       .pipe(templateCache(
         module: "app"
+        base: nodePath.resolve path.inputDir + 'templates/'
       ))
       .pipe(minify())
       .pipe(gulp.dest(path.outputDir + "js"))
