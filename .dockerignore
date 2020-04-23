@@ -3,8 +3,10 @@ bower_components
 node_modules
 test
 www
+docker-cloud.yml
 docker-compose.yml
 Dockerfile
+Dockerfile.master
 .dockerignore
 .gitignore
 README.md
