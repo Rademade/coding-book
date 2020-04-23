@@ -1,3 +1,4 @@
+bin
 bower_components
 docker
 .git
@@ -10,4 +11,5 @@ Dockerfile
 Dockerfile.master
 .dockerignore
 .gitignore
+Jenkinsfile
 README.md
