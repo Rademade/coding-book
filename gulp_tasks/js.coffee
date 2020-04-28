@@ -13,7 +13,7 @@ gulp.task 'js', ->
     path.inputDir + '../bower_components/angular-ui-router/release/angular-ui-router.js',
     path.inputDir + '../bower_components/particles.js/particles.js',
     path.inputDir + '../bower_components/particles.js/analytic.js',
-  ])
+  ], {allowEmpty: true})
     .pipe concat('main.js')
     .pipe(minify())
     .pipe gulp.dest(path.outputDir + 'js')

@@ -1,0 +1,14 @@
+bin
+bower_components
+.git
+node_modules
+test
+www
+docker-cloud.yml
+docker-compose.yml
+Dockerfile
+Dockerfile.master
+.dockerignore
+.gitignore
+Jenkinsfile
+README.md
