@@ -15,7 +15,7 @@
     "gulp-jade": "^1.0.1",
     "gulp-jade-inheritance": "^0.5.2",
     "gulp-livereload": "^3.8.0",
-    "gulp-svg-sprite": "^1.2.5",
+    "gulp-svg-sprite": "^1.5.0",
     "rimraf": "3.x"
   },
   "devDependencies": {
